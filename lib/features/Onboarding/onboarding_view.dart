@@ -51,12 +51,19 @@ class OnboardingImagebody extends StatelessWidget {
 }
 
 class CustomScrollIndicator extends StatelessWidget {
-   CustomScrollIndicator({super.key, required this._controller});
+  CustomScrollIndicator({super.key, required this._controller});
 
- final PageController _controller ;
+  final PageController _controller;
 
   @override
   Widget build(BuildContext context) {
-    return  SmoothPageIndicator(controller: _controller, count: 3) ;
+    return SmoothPageIndicator(
+        controller: _controller,
+        count: 3,
+        effect: ExpandingDotsEffect(
+          activeDotColor: AppColors.deepBrown,
+          dotWidth: 26,
+          dotHeight: 20,
+        ));
   }
 }
